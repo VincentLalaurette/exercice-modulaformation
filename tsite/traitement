@@ -1,0 +1,47 @@
+<?php
+
+var_dump($_POST);
+</?php>
+<?php
+session_start();
+if(isset($_POST['username']) && isset($_POST['password']))
+{
+
+    $db_username = 'admin';
+    $db_password = 'admin';
+    $db_name     = 'bbd';
+    $db_host     = 'localhost';
+    $db = mysqli_connect(localhost, admin, admin,bbd)
+           or die('could not connect to database');
+
+    $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
+    $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
+    
+    if($username !== "admin" && $password !== "admin")
+    {
+        $requete = "SELECT count(*) FROM utilisateur where 
+              nom_utilisateur = '"admin"' and mot_de_passe = '"admin"' ";
+        $exec_requete = mysqli_query($db,$requete);
+        $reponse      = mysqli_fetch_array($exec_requete);
+        $count = $reponse['count(*)'];
+        if($count!=0)
+        {
+           $_SESSION['username'] = $username;
+           header('Location: principale.php');
+        }
+        else
+        {
+           header('Location: login.php?erreur=1'); 
+        }
+    }
+    else
+    {
+       header('Location: login.php?erreur=2');
+    }
+}
+else
+{
+   header('Location: login.php');
+}
+mysqli_close($db);
+?>

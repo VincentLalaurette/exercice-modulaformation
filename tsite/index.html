@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Accueil</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+	<nav>
+	<h1>
+		<ul>
+			<li><a href="index.html" title="page2.html">Accueil</a></li>
+			<li><a href="Page2.html" title="page2.html">Formulaire de contact</a></li>
+		</ul>
+	</nav>
+	</h1>	
+	<h1 style="‪C:\Users\vince\Desktop\tsite\pcgamer1.jfif)">
+	Achat pc gamer
+</h1>
+<div id="slider">
+	<figure>
+		<img src="C:\Users\vince\Desktop\tsite\im1.jpg" alt>
+		<img src="C:\Users\vince\Desktop\tsite\im2.jpg" alt>
+		<img src="C:\Users\vince\Desktop\tsite\im3.jpg" alt>
+		<img src="C:\Users\vince\Desktop\tsite\pcgamer1.jfif" alt>
+	</figure>
+</div>
+<h3>
+PRIX : 999.99 euros
+	<button onclick="window.location.href = 'page2.html';"> Acheter </button>
+</h3>
+
+<article>
+			<h2> Fiche technique Orion PO3-600-054 Core i5 2,90 GHz - SSD 256 Go + HDD 1 To - 12 Go - Nvidia GeForce GTX 1660Ti</h2>
+<p>
+
+Couleur : Noir
+Capacité de stockage (Go) : 1256
+Mémoire (Go) : 12
+Modèle : Predator Orion PO3-600-054
+Vitesse du processeur (GHz) : 2,90
+Marque du processeur : Intel
+Type du processeur : Core i5
+Nom de la Carte Graphique : Nvidia GeForce GTX 1660Ti
+Système d'exploitation : Windows
+Date de sortie : 2018
+Capacité de stockage SSD (Go) : 256
+Type de stockage : HDD + SSD
+Marque : Acer
+Poids (g) : 10000
+
+<p/>
+		<article/>
+		
+</body>
+<body1>
+		 <div id="container">
+            <!-- zone de connexion -->
+            
+            <form action="traitement" method="POST">
+                <h1>Connexion</h1>
+                
+                <label><b>Nom d'utilisateur</b></label>
+                <input type="text" placeholder="Entrer le nom d'utilisateur" name="admin" required>
+
+                <label><b>Mot de passe</b></label>
+                <input type="password" placeholder="Entrer le mot de passe" name="admin" required>
+
+                <input type="submit" id='submit' value='LOGIN' >
+                <?php
+                if(isset($_GET['erreur'])){
+                    $err = $_GET['erreur'];
+                    if($err==1 || $err==2)
+                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                }
+                ?>
+            </form>
+        </div>
+</body1>
+<body style='background:#fff;'>
+        <div id="content">
+            
+            <?php
+                session_start();
+                if($_SESSION['username'] !== ""){
+                    $user = $_SESSION['username'];
+                  
+                    echo "Bonjour $user, vous êtes connecté";
+                }
+            ?>
+            
+        </div>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>page2</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<nav>
+	<h1>
+		<ul>
+			<li><a href="index.html" title="page2.html">Accueil</a></li>
+			<li><a href="Page2.html" title="page2.html">Formulaire de contact</a></li>
+		</ul>
+	</nav>
+
+
+<div class="shadowbox">
+
+	<h1>Formulaire de contact</h1>
+	<h2>
+	<fieldset>
+	<form method="post" action="traitement.php">
+		<label for="Prénon">Entrez votre Prénom </label>
+		<input type="text" id="Prénom" name="Prénom">
+		
+		<label for="Nom">Entrez votre Nom </label>
+		<input type="text" id="Nom" name="Nom">
+		
+		<label for="Email">Entrez votre Email </label>
+		<input type="text" id="Mail" name="Mail">
+	
+		</h2>
+		<h3>
+		<label for="Message">Tapez votre message ?</label>
+		<textarea id="Message" name="Tapez votre message"></textarea>
+		
+		<input type="submit" value="Envoyer">  
+		
+		</h3>
+	</fieldset>	
+	<div class="g-recaptcha" data-sitekey="6LcYCNoUAAAAAKpWJB1cDTb0B5f9oGNUip6PiZAh"></div>	
+	
+	
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	
+	<div class="center">
+		<label><input type="checkbox" name=""> En cochant la case, vous accepetez toutes les conditions sur la règlementation des données personnelles, qui ne seront ni revendues, ni utilisées à des fins commerciales.</label>
+		
+	<div>
+		<input type="submit" value="Envoyer">
+		
+	</div>
+</body>
+</html>
